@@ -1,0 +1,86 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.wrapper-inner {
+  max-width: 1131px;
+  margin: 0 auto;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    content: "";
+    z-index: -1;
+    background-size: cover;
+  }
+
+  &::before {
+    height: 192px;
+    background-position: bottom center;
+  }
+
+  &::before {
+    height: 136px;
+    background-position: top center;
+  }
+
+  &--v1 {
+    &::before {
+      background-image: url("../images/pattern_01_v1.png");
+    }
+
+    &::after {
+      background-image: url("../images/pattern_02_v1.png");
+    }
+  }
+
+  &--v2 {
+    &::before {
+      background-image: url("../images/pattern_01_v2.png");
+    }
+
+    &::after {
+      background-image: url("../images/pattern_02_v2.png");
+    }
+  }
+}
