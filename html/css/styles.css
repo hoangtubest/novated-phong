@@ -65,10 +65,6 @@ table {
   padding: 0 38px;
 }
 
-.wrapper.page-2, .wrapper.page-3, .wrapper.page-4 {
-  margin-top: 50px;
-}
-
 .wrapper-inner {
   max-width: 793px;
   margin: 0 auto;
@@ -615,4 +611,15 @@ table {
 .pw-4-employee__col dl dd {
   border-bottom: 2px solid #00445B;
   flex-grow: 1;
+}
+
+.page-break-after {
+  margin-top: 40px;
+}
+
+@media print {
+  .page-break-after {
+    margin-top: 0;
+    page-break-after: always;
+  }
 }

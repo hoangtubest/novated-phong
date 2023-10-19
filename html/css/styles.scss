@@ -75,14 +75,7 @@ table {
   padding: 0 38px;
 }
 
-.wrapper {
-
-  &.page-2,
-  &.page-3,
-  &.page-4 {
-    margin-top: 50px;
-  }
-}
+.wrapper {}
 
 .wrapper-inner {
   max-width: 793px;
@@ -787,5 +780,16 @@ table {
         flex-grow: 1;
       }
     }
+  }
+}
+
+.page-break-after {
+  margin-top: 40px;
+}
+
+@media print {
+  .page-break-after {
+    margin-top: 0;
+    page-break-after: always;
   }
 }
