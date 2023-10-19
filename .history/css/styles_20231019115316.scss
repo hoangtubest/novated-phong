@@ -1,0 +1,598 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.eot');
+  src: url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+    url('../fonts/Gilroy-Bold.woff') format('woff'),
+    url('../fonts/Gilroy-Bold.ttf') format('truetype'),
+    url('../fonts/Gilroy-Bold.svg#Gilroy-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+$c_red: #ED1F3C;
+$c_blue: #00445B;
+$font_ttl: "Gilroy";
+$fz_ttl: 160%;
+
+.c-title {
+  font-family: $font_ttl;
+  font-size: $fz_ttl;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  display: table;
+  width: 100%;
+  border: none;
+  border-spacing: 0;
+}
+
+.container {
+  padding: 0 60px;
+}
+
+.wrapper {
+
+  &.page-2,
+  &.page-3,
+  &.page-4 {
+    margin-top: 50px;
+  }
+}
+
+.wrapper-inner {
+  max-width: 1131px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 136px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    content: "";
+    background-size: cover;
+  }
+
+  &::before {
+    z-index: -1;
+    top: 0;
+    height: 192px;
+    background-position: bottom center;
+  }
+
+  &::after {
+    z-index: 1;
+    bottom: 0;
+    height: 136px;
+    background-position: top center;
+  }
+
+  &--v1 {
+    &::before {
+      background-image: url("../images/pattern_01_v1.png");
+    }
+
+    &::after {
+      background-image: url("../images/pattern_02_v1.png");
+    }
+  }
+
+  &--v2 {
+    &::before {
+      background-image: url("../images/pattern_01_v2.png");
+    }
+
+    &::after {
+      background-image: url("../images/pattern_02_v2.png");
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.header {
+  padding: 114px 60px 0;
+}
+
+.header-logo {
+  width: 250px;
+}
+
+.pw-1-estimate {
+  &__time {}
+
+  &__title {}
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    dl {
+      width: calc(50% - 20px);
+      display: flex;
+
+      dt {
+        strong {
+          font-weight: bold;
+        }
+      }
+
+      dd {
+        ul {
+          list-style: none;
+
+          li {}
+        }
+      }
+    }
+  }
+
+  &__car {}
+}
+
+.pw-1-feature {
+  padding: 60px 30px 25px;
+
+  &__row {
+    display: flex;
+    gap: 13px;
+  }
+
+  &__col {
+    width: 25%;
+    height: 135px;
+    background: url("../images/red-blob.png") no-repeat center center / 100% 100%;
+    display: flex;
+    align-items: center;
+
+    &:nth-child(2n+1) {
+      background-image: url("../images/inverse-blob.png");
+    }
+  }
+
+  &__content {
+    width: 100%;
+    color: #fff;
+    text-align: right;
+    padding-right: 12px;
+    ;
+  }
+}
+
+.pw-1-choose {}
+
+.pw-1-info {
+  padding: 30px 0;
+
+  &__title {
+    background: $c_red;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 60px;
+  }
+
+  &__content {}
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    width: calc(50% - 25px);
+
+    table {
+      th {
+        font-weight: normal;
+        text-align: left;
+        padding: 5px 0;
+      }
+
+      td {
+        padding: 5px 0;
+        text-align: right;
+      }
+    }
+  }
+
+  &__note {
+    text-align: right;
+    margin-top: 1em;
+  }
+}
+
+.pw-2-package {
+  background: $c_blue;
+  color: #fff;
+
+  &__title {}
+
+  &__lead {}
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    width: 16.666666%;
+    text-align: center;
+
+    figure {
+      max-width: 100px;
+      margin: 0 auto 10px;
+    }
+
+    h3 {}
+
+    p {}
+  }
+}
+
+.pw-2-price {
+  &__inner {}
+}
+
+.pw-2-value-cost {
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    width: 50%;
+
+    dl {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      dt {}
+
+      dd {
+        sup {}
+      }
+    }
+  }
+}
+
+.pw-2-tax {
+  &__row {
+    display: flex;
+  }
+
+  &__col {
+    width: 50%;
+  }
+
+  table {
+    th {
+      text-align: left;
+    }
+
+    td {
+      text-align: right;
+    }
+  }
+}
+
+.pw-2-info {
+  margin-bottom: -30px;
+
+  &__row {
+    display: flex;
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+    background: $c_blue;
+  }
+
+  &__content {
+    background: #69889B;
+    height: 100%;
+
+    table {
+      thead {
+        th {
+          font-weight: bold;
+          text-align: center;
+          padding: 5px 0;
+        }
+      }
+
+      tbody {
+        th {
+          text-align: left;
+          padding: 5px 0;
+        }
+
+        td {
+          text-align: center;
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+
+  &__col {
+    width: 50%;
+
+    &:nth-child(2n) {
+      .pw-2-info__title {
+        background: $c_red;
+      }
+
+      .pw-2-info__content {
+        background: #FCCABD;
+        color: #171311;
+
+        table {
+          tbody {
+            td {
+              text-align: right;
+
+              em {
+                color: $c_red;
+                display: block;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.pw-3-how {
+  padding: 40px 0;
+
+  &__title {
+    @extend .c-title;
+    font-size: 200%;
+    color: $c_blue;
+    margin-bottom: 15px;
+  }
+
+  &__lead {}
+
+  &__video {
+    width: 560px;
+    width: 75%;
+    margin: 30px auto 10px;
+
+    &__inner {
+      padding-top: 56.25%;
+      height: 0;
+      position: relative;
+      width: 100%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.pw-3-package {
+  background: $c_blue;
+  color: #fff;
+  padding: 30px 0;
+
+  &__title {
+    @extend .c-title;
+    margin-bottom: 15px;
+  }
+
+  &__lead {
+    font-style: italic;
+  }
+
+  &__row {
+    display: flex;
+    gap: 25px;
+  }
+
+  &__col {
+    text-align: center;
+    margin-top: 30px;
+
+    figure {
+      max-width: 130px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      margin: 10px 0;
+      line-height: 1.45;
+      font-size: 110%;
+    }
+
+    p {
+      line-height: 1.45;
+    }
+  }
+}
+
+.pw-3-next {
+  &__title {}
+
+  &__lead {}
+
+  &__row {
+    display: flex;
+    gap: 25px;
+  }
+
+  &__col {
+    figure {
+      max-width: 150px;
+      margin: 0 auto;
+    }
+
+    p {}
+  }
+}
+
+.pw-4-terms {
+  padding: 40px 0 20px;
+
+  &__title {
+    margin-bottom: 30px;
+    @extend .c-title;
+    color: $c_blue;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  ol {
+    width: calc(50% - 20px);
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 2.5em;
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.35;
+
+      .num {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &.is-hidden {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .txt-link {
+        color: $c_red;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: 1px solid $c_red;
+        }
+      }
+    }
+  }
+}
+
+.pw-4-employee {
+  &__title {
+    background: $c_blue;
+    margin-bottom: 20px;
+
+    h2 {
+      @extend .c-title;
+      padding: 10px 0 12px;
+      color: #fff;
+      width: calc(50% - 15px);
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    width: calc(50% - 15px);
+
+    dl {
+      display: flex;
+      padding: 10px 0;
+
+      dt {
+        @extend .c-title;
+        color: $c_blue;
+        font-size: 120%;
+        width: 110px;
+
+        em {
+          color: $c_red;
+        }
+      }
+
+      dd {
+        border-bottom: 2px solid $c_blue;
+        flex-grow: 1;
+      }
+    }
+  }
+}
