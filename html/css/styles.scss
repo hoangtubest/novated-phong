@@ -788,6 +788,19 @@ table {
 }
 
 @media print {
+  .pw-3-how__video__inner {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: url("../images/video_thumbnail.jpg") no-repeat center center / cover;
+    }
+  }
+
   .page-break-after {
     margin-top: 0;
     page-break-after: always;
